@@ -5,6 +5,7 @@ using UnityEngine;
 public class Canon : MonoBehaviour
 {
     public GameObject canonBall;
+    public Transform ShootPoint;
 
     [SerializeField] private KeyCode shootKeyCode;
 
@@ -18,7 +19,7 @@ public class Canon : MonoBehaviour
     {
         if (Input.GetKeyDown(shootKeyCode))
         {
-            Instantiate(canonBall);
+            Instantiate(canonBall, ShootPoint);
             Shoot();
         }
     }
